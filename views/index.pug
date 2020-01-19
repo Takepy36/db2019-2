@@ -1,0 +1,34 @@
+html
+    head
+        link(ref="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        link(rel="stylesheet" href="css/materialize.min.css" media="screen,projection")
+        link(rel="stylesheet" href="css/app.css")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    body
+        script(type="text/javascript" src="js/materialize.min.js")
+        div(class="container")
+            each row in results
+                div(class="row")
+                    div(class = "movie_image")
+                        br
+                        img(class="thumbnail_pic" src="pic/"+row['thumbnail'])
+                        div(class="col s10 offset-s1 content") 
+                        div: a(href = row['content'] target="_blank") #{row['content']} 
+                        br
+                    div(class = "movie_info")
+                        div(class="col_12")
+                            img(class="icon" src="icon/"+row['owner']+".jpg")
+                            br
+                        div(class="col_s11")
+                            div(class="movieinfo")
+                            |#{row['title']}
+                            br
+                            |#{row['owner']}
+                            |・#{row['views']}回再生
+                            |・#{row['datetime']} 
+                            br
+                            br
+                
+                            
+                        
+        
